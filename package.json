@@ -1,0 +1,36 @@
+{
+  "name": "baillie-ogrady",
+  "version": "1.0.0",
+  "description": "Bespoke theme for the NFL Foundation UK Website",
+  "main": "postcss.config.js",
+  "scripts": {
+    "dev": "gulp",
+    "build": "gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chunk-projects/nfl-foundation-websitehttps:.git"
+  },
+  "author": "Chunk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chunk-projects/nfl-foundation-websitehttps:/issues"
+  },
+  "homepage": "https://github.com/chunk-projects/nfl-foundation-websitehttps:#readme",
+  "dependencies": {
+    "@tailwindcss/aspect-ratio": "^0.2.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.7",
+    "browser-sync": "^2.27.9",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-imagemin": "^8.0.0",
+    "gulp-postcss": "^9.0.1",
+    "gulp-terser": "^2.1.0",
+    "postcss": "^8.4.13",
+    "postcss-import": "^14.1.0",
+    "tailwindcss": "^3.0.24"
+  }
+}
