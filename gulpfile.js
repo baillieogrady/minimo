@@ -10,15 +10,18 @@ const terser = require("gulp-terser");
 const browserSync = require("browser-sync").create();
 // const imagemin = require('gulp-imagemin');
 
+const proxy = "http://baillie-ogrady.local/";
+
 //compile, prefix, and min css
 function css() {
     return (
-        src("src/app.css") // change to your source directory
+        src("src/css/app.css") // change to your source directory
             .pipe(
                 postcss([
                     require('tailwindcss/nesting'),
                     tailwindcss("./tailwind.config.js"),
-                    require("autoprefixer")])
+                    require("autoprefixer"),
+                    require("postcss-import")])
             )
             .pipe(prefix("last 2 versions"))
             .pipe(minify())
@@ -38,7 +41,7 @@ function css() {
 
 // minify js
 function js() {
-    return src("src/app.js") // change to your source directory
+    return src("src/js/app.js") // change to your source directory
         .pipe(terser())
         .pipe(dest("dist")); // change to your final/public directory
 }
@@ -46,7 +49,7 @@ function js() {
 // browsersync
 function browsersyncServe(cb) {
     browserSync.init({
-        proxy: "http://baillie-ogrady.local/",
+        proxy: proxy,
     });
     cb();
 }
