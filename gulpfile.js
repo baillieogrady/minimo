@@ -18,10 +18,11 @@ function css() {
         src("src/css/app.css") // change to your source directory
             .pipe(
                 postcss([
-                    require("postcss-import")]),
-                    require('tailwindcss/nesting'),
+                    require("postcss-import"),
+                    require("tailwindcss/nesting"),
                     tailwindcss("./tailwind.config.js"),
-                    require("autoprefixer")
+                    require("autoprefixer"),
+                ])
             )
             .pipe(prefix("last 2 versions"))
             .pipe(minify())
@@ -63,12 +64,12 @@ function browsersyncReload(cb) {
 function watchTask() {
     watch(
         "src/**/*.css",
-        series(css, js, browsersyncReload)
+        series(css, browsersyncReload)
     );
 
     watch(
         "src/**/*.js",
-        series(css, js, browsersyncReload)
+        series(js, browsersyncReload)
     );
 
     watch(

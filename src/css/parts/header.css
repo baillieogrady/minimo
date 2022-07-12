@@ -1,0 +1,6 @@
+.header {
+    @apply mt-5 mb-[4.5rem] lg:mb-36 lg:mt-8;
+    a {
+        @apply no-underline;
+    }
+}
